@@ -7,7 +7,7 @@ console.log(result);*/
 
 //Ejercicio 2
 
-let base = parseInt(prompt("Ingrese base"));
+/*let base = parseInt(prompt("Ingrese base"));
 let altura = parseInt(prompt("Ingrese altura"));
 
-console.log(`El area del triangulo es: ${(base*altura) / 2}`);
+console.log(`El area del triangulo es: ${(base*altura) / 2}`);*/
