@@ -1,9 +1,9 @@
 //Practica 1
-/*var num1 = parseInt(prompt('Ingresa numero 1'));
-var num2 = parseInt(prompt('Ingresa numero 2'));
-var num3 = parseInt(prompt('Ingresa numero 3'));
+/*let num1 = parseInt(prompt('Ingresa numero 1'));
+let num2 = parseInt(prompt('Ingresa numero 2'));
+let num3 = parseInt(prompt('Ingresa numero 3'));
 
-var max = 0;
+let max = 0;
 if((num1 >= num2) && (num1 >= num3)){
     max = num1;
 }
