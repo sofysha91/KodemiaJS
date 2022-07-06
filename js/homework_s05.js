@@ -93,7 +93,15 @@ let e = 0;
 let space = 0;
 
 for(let i = 0; i < strLower.length; i++){
-    strLower[i] === 'a' ? a++ : strLower[i] === 'e' ? e++ : strLower[i] === ' ' ? space++ : null ; 
+    if(strLower[i] === 'a'){ 
+        a++ 
+    }
+    else if(strLower[i] === 'e'){
+         e++ 
+    }
+    else if(strLower[i] === ' '){ 
+        space++ 
+    } 
 }
 console.log(`Ciclo for \nA -> ${a}\nE -> ${e}\nEspacios -> ${space}`);
 
@@ -103,7 +111,15 @@ space = 0;
 i = 0;
 
 while(i < strLower.length){
-    strLower[i] === 'a' ? a++ : strLower[i] === 'e' ? e++ : strLower[i] === ' ' ? space++ : null ; 
+    if(strLower[i] === 'a'){ 
+        a++ 
+    }
+    else if(strLower[i] === 'e'){
+         e++ 
+    }
+    else if(strLower[i] === ' '){ 
+        space++ 
+    } 
     i++;
 }
 console.log(`Ciclo while \nA -> ${a}\nE -> ${e}\nEspacios -> ${space}`);
@@ -114,7 +130,16 @@ space = 0;
 i = 0;
 
 do{
-    strLower[i] === 'a' ? a++ : strLower[i] === 'e' ? e++ : strLower[i] === ' ' ? space++ : null ; 
+    //strLower[i] === 'a' ? a++ : strLower[i] === 'e' ? e++ : strLower[i] === ' ' ? space++ : null ; 
+    if(strLower[i] === 'a'){ 
+        a++ 
+    }
+    else if(strLower[i] === 'e'){
+         e++ 
+    }
+    else if(strLower[i] === ' '){ 
+        space++ 
+    } 
     i++;
 }while(i < strLower.length)
 console.log(`Ciclo do while \nA -> ${a}\nE -> ${e}\nEspacios -> ${space}`);
