@@ -1,4 +1,4 @@
-console.log("Hello World!")
+//console.log("Hello World!")
 
 //This is a comment
 /* This is a 
@@ -17,5 +17,5 @@ multiline comment */
 */
 
 
-let my_variable = 10
-console.log(my_variable)
+//let my_variable = 10
+//console.log(my_variable)
