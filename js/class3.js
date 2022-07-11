@@ -1,9 +1,9 @@
 //Practica 1
-/*var num1 = parseInt(prompt('Ingresa numero 1'));
-var num2 = parseInt(prompt('Ingresa numero 2'));
-var num3 = parseInt(prompt('Ingresa numero 3'));
+/*let num1 = parseInt(prompt('Ingresa numero 1'));
+let num2 = parseInt(prompt('Ingresa numero 2'));
+let num3 = parseInt(prompt('Ingresa numero 3'));
 
-var max = 0;
+let max = 0;
 if((num1 >= num2) && (num1 >= num3)){
     max = num1;
 }
@@ -36,3 +36,38 @@ let b = parseInt( prompt('Ingresa numero 2'));
 
 a > b ? console.log("a/b=" ,a / b) : a < b ? console.log("a+b=", a + b) : console.log("a*b=", a * b);
 //console.log(result);*/
+
+//Practica 5
+/*Calculadora con switch*/
+
+/*console.log("1. Suma");
+console.log("2. Resta");
+console.log("3. Multiplicacion");
+console.log("4. Division");
+
+let opc = parseInt(prompt("Elige una operacion"));
+let num1 =parseInt(prompt("Ingresa numero 1"));
+let num2 =parseInt(prompt("Ingresa numero 2"));
+
+let result;
+switch(opc){
+    case 1:
+        result = num1 + num2;
+        break;
+    case 2:
+        result = num1 - num2;
+        break;
+    case 3:
+        result = num1 * num2;
+        break;
+    case 4:
+        result = num1 / num2;
+        break;
+    default:
+        result = "Operacion no valida";
+        break;
+}
+
+console.log(`El resultado de la operacion seleccionada es: ${result}`);*/
+
+
