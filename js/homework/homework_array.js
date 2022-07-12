@@ -56,3 +56,6 @@ const firstAndLast = (array) =>{
 console.log(firstAndLast(['hola', 'mundo']));
 console.log(firstAndLast(['hola', 'todos']));
 console.log(firstAndLast());
+
+
+
