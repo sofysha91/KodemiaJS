@@ -14,7 +14,7 @@ console.log(koders[5][0]);*/
 
 
 
-koders = ['Mariana', 'Marco', 'Cris'];
+let koders = ['Mariana', 'Marco', 'Cris'];
 
 //String -> regresa el array como cadena
 /*console.log(koders.toString());
@@ -122,3 +122,37 @@ console.log(arr);
     });
 
     console.log(soloPares);
+
+//! Reduce
+/*  Recibe 2 argumentos, un callback function y un initialValue
+    su callback recibe 4 parametros predefinidos
+    Total o previous value o acumulador, CurrentValue, Index, Copy of array
+*/
+
+let arr2 = [1,2,3,4,5];
+
+let result = arr2.reduce((acumulador, cv, index, arr) =>{
+    acumulador += cv;
+    return acumulador;
+}, 0);
+
+console.log(result);
+
+const koders2 = ['kelly', 'Sebas', 'Adrian'];
+
+let iniciales = koders2.reduce((acc, cv) => {
+    acc.push(cv[0]);
+    return acc;
+}, []);
+
+console.log(iniciales);
+
+/*const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+let myArrayWithNoDuplicates = myArray.reduce(function (previousValue, currentValue) {
+  if (previousValue.indexOf(currentValue) === -1) {
+    previousValue.push(currentValue)
+  }
+  return previousValue
+}, [])
+
+console.log(myArrayWithNoDuplicates);*/

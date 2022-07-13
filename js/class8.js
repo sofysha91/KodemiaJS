@@ -31,3 +31,6 @@ const capitalize = (arrayCities) => {
 }
 let result = capitalize(arrayCities);
 console.log(result);
+
+
+
