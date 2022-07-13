@@ -156,3 +156,13 @@ let myArrayWithNoDuplicates = myArray.reduce(function (previousValue, currentVal
 }, [])
 
 console.log(myArrayWithNoDuplicates);*/
+
+//? Multidimensional array
+
+const multi = [[1,2,3],['s','f']];
+
+multi.forEach((cv) => {
+    cv.forEach((cv2) => {
+        console.log(cv2);
+    });
+});
