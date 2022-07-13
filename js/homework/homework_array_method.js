@@ -24,7 +24,7 @@ let arrayCities = ['méXicO', 'PErÚ', 'eSpAña', 'inGlaterrA'];
 
 const capitalize = (arrayCities) => {   
     newCities = arrayCities.map(element => {
-        return element[0].toUpperCase() + element.slice(1).toLowerCase();
+        return `${element[0].toUpperCase()}${element.slice(1).toLowerCase()}`;
     });
     return newCities;
 }
@@ -44,10 +44,12 @@ console.log(capitalize(arrayCities));
 let names = ['jorge','ana','ivan','sergio','oscar'];
 
 const onlyNamesVowels = (array) => {   
-    newArray = array.filter((currentValue, index, copiaArrOriginal) => {
+    newArray = array.filter((currentValue) => {
         if (currentValue[0].search(/[aeiou]/gi) != -1 ) {
             return currentValue;
         }
+    }).map((currentValue) => {
+       return `${currentValue[0].toUpperCase()}${currentValue.slice(1).toLowerCase()}`;
     });
     return newArray;
 }
