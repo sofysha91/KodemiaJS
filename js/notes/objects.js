@@ -55,14 +55,14 @@ for(x in koder)
     console.log(koder[x]);
 } */
 
-let koder = {
+/*let koder = {
     firstName: "Sofy",
     lastName: "Arreguin"      
- } 
+ } */
 
 //! Metodos de objetos
 // Keys
-let keys = Object.keys(koder);
+/* let keys = Object.keys(koder);
 //console.log(keys);
 
 // Create
@@ -77,7 +77,7 @@ createdKoder.firstName = "Araceli";
 // Seal
 Object.seal(koder);
 //koder.firstName = "Test";
-koder.age = 20;
+koder.age = 20; */
 
 //console.log(koder);
 
@@ -90,6 +90,47 @@ koder.age = 20;
     age: 120,
   };*/
 
-const copy = Object.assign({}, koder);
+//const copy = Object.assign({}, koder);
 
-console.log(copy);
+//console.log(copy);
+
+
+//! Metodos de objetos
+
+const koder  = {
+    fName: 'Jose',
+    lName: 'Perez',
+
+    fullName: function(){
+        return `${this.fName} ${this.lName}`;
+    }
+}
+
+console.log(koder.fullName());
+
+//! Funciones constructoras de objetos
+
+function Mentor (nombre, apellido, edad){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+}
+
+const alfredo = new Mentor("Alfredo", "Pizana", 28);
+
+console.log(alfredo);
+
+
+//! Clases en JS
+/* Se utiliza la palabra reservada Class */
+
+class Car {
+    constructor(color, modelo){
+        this.color = color;
+        this.modelo = modelo;
+    }
+}
+
+let coche1 = new Car('rojo','modelo 1');
+
+console.log(coche1);

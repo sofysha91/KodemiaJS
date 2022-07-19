@@ -92,7 +92,7 @@ const booksStatus = (arrLibrary) => {
 
 const getAuthors = (arrLibrary) => {
     let result = arrLibrary.map((book) => {        
-        return [book.author];
+        return book.author;
      });
  
      return result;
@@ -100,7 +100,7 @@ const getAuthors = (arrLibrary) => {
 
 const getBooks = (arrLibrary) => {
     let result = arrLibrary.map((book) => {        
-        return [book.title];
+        return book.title;
      });
  
      return result;
