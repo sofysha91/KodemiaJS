@@ -29,16 +29,16 @@ let koders =  [
     }
  ]
 
-let kList = document.createElement('ul');
-kList.setAttribute("class", "koders");
+let list = document.createElement('ul');
+list.setAttribute("class", "koders");
 
-//let body = document.querySelector('body');
+let body = document.querySelector('body');
 
-body.appendChild(kList);
+body.appendChild(list);
 
 koders.forEach(koder => {
     let item = document.createElement('li');
     item.textContent = `${koder.name} ${koder.lastName}`;
     item.setAttribute("class", "item_koder");
-    kList.appendChild(item);
+    list.appendChild(item);
 });

@@ -53,7 +53,7 @@ body.appendChild(list); */
 //list.appendChild(item);
 
 //* --------------- 
-let list = document.createElement('ul');
+/* let list = document.createElement('ul');
 
 let body = document.querySelector('body');
 
@@ -63,4 +63,23 @@ for(let i = 0; i<= 30; i++){
     let item = document.createElement('li');
     item.textContent = `item # ${i}`;
     list.appendChild(item);
-}
+} */
+
+//! Otras propiedades de los elementos del DOM
+//? textContent
+//? innerText
+//? innerHTML
+
+let lista = document.querySelector('.lista');
+
+let menuItems = ['comidaChina','Mexicana','Venezolana'];
+
+menuItems.forEach((texto) => {
+    lista.innerHTML += `<li class="items">${texto}</li>`;
+});
+
+//? classList
+lista.classList.add('otra', 'otramas');
+lista.classList.remove('otramas');
+
+console.log(lista.classList.value);
