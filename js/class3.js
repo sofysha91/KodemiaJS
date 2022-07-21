@@ -63,7 +63,7 @@ switch(opc){
     case 4:
         result = num1 / num2;
         break;
-    default:
+    photo:
         result = "Operacion no valida";
         break;
 }

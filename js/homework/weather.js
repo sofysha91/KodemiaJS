@@ -18,7 +18,7 @@ switch(weather){
     case 'd':
         result = "nublado";
         break;
-    default:
+    photo:
         console.error("Opcion no valida");
         break;
 }
