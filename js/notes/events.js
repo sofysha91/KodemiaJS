@@ -42,3 +42,15 @@ btnO.addEventListener('click', (e) => {
     console.log(e)
     e.target.title = e.timeStamp;
 });
+
+//Destructuracion de objetos
+
+const objectPrueba = {
+    firstName : 'Koder',
+    lastName: 'Kodemia',
+    isActive: true
+}
+
+let {firstName, lastName, isActive:active} = objectPrueba;
+
+console.log(firstName, lastName, active);
