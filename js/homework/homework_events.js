@@ -329,10 +329,17 @@ let users = [
 
 const search = document.querySelector(".search");
 const result = document.querySelector(".result"); 
-const btn_search = document.querySelector(".find_user")
+const btn_search = document.querySelector(".find_user");
 
-btn_search.addEventListener('click', (event) => {
-  let filteredUsers = filterUsers(search.value);
+//Document ready
+window.addEventListener('DOMContentLoaded', () => {
+    let filteredUsers = filterUsers("");
+    result.innerHTML = printUsers(filteredUsers);
+});
+
+//search input
+search.addEventListener('input', (event) => {
+    let filteredUsers = filterUsers(search.value);
     result.innerHTML = printUsers(filteredUsers);
 });
 
