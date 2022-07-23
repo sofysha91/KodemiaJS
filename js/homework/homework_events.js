@@ -329,13 +329,14 @@ let users = [
 
 const search = document.querySelector(".search");
 const result = document.querySelector(".result"); 
+const btn_search = document.querySelector(".find_user")
 
-search.addEventListener('input', (event) => {
-    result.innerHTML = searchOnArray(event.target.value.toLowerCase());
-    //searchOnArray(event.target.value.toLowerCase());
+btn_search.addEventListener('click', (event) => {
+  let filteredUsers = filterUsers(search.value);
+    result.innerHTML = printUsers(filteredUsers);
 });
 
-function searchOnArray(key){
+/*function searchOnArray(key){
     let match = users.reduce((acc, {name, username, email}) => {
         if(name.toLowerCase().includes(key) || username.toLowerCase().includes(key) || email.toLowerCase().includes(key))
         {
@@ -354,5 +355,40 @@ function searchOnArray(key){
         return acc;
     }, '');
     return match;
+}*/
+
+const filterUsers = (str) => {
+  let strF = str.toLowerCase()
+  let usuariosFiltrados = users.filter((user)=> {
+
+      if(
+          user.name.toLocaleLowerCase().match(strF) ||
+          user.username.toLocaleLowerCase().match(strF) ||
+          user.email.toLocaleLowerCase().match(strF)
+          ) {
+          return user
+      }
+
+  })
+
+  return usuariosFiltrados
 }
 
+const printUsers = (arrUsers) =>{
+  let template = "";
+  arrUsers.forEach(({name, username, email}) => {
+    template +=`
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">${name}</h5>                
+              </div>
+              <p class="mb-1">
+                  Username: ${username} <br>
+                  Email: ${email}
+              </p>                
+          </a>
+          `; 
+  });
+
+  return template;
+}
