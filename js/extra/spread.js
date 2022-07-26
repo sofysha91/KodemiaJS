@@ -1,3 +1,7 @@
+let inputNumber = document.querySelector(".input_text");
+let btnSearch = document.querySelector(".search-button");
+let pokemonArr = [];
+
 //Get Pokemons from URL
  const getDataFromURL = (url) =>{
     let aPokemon = [];    
@@ -22,7 +26,22 @@
     return aPokemon;
  };
 
-let pokemonArr = getDataFromURL("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
+
+
+btnSearch.addEventListener("click", (e) => {
+    
+    let number = parseInt(inputNumber.value);
+    if(!Number.isNaN(number)){
+        pokemonArr = getDataFromURL("https://pokeapi.co/api/v2/pokemon?limit="+number+"&offset=0");
+        document.querySelector("#list_result").innerHTML = generatePokemonCard(pokemonArr);
+    }
+    else{
+        document.querySelector("#list_result").innerHTML = `<div class="alert alert-danger" role="alert">
+        Ocurrio un error, ingrese un numero valido
+      </div>`;
+    }
+    
+});
 
 const generatePokemonProfile = (arrPokemon) => {
     let pokemonProfile = arrPokemon.results.map((pokemon) => {
@@ -34,7 +53,6 @@ const generatePokemonProfile = (arrPokemon) => {
     return pokemonProfile;
 }
 
-
 const generatePokemonCard = (arrPokemon) => {
     let pokemonList = generatePokemonProfile(arrPokemon);
     console.log(pokemonList);
@@ -44,7 +62,7 @@ const generatePokemonCard = (arrPokemon) => {
         acc += `
         <div class="col-3">
             <div class="card">
-                <img src="${front_default}" class="card-img-top" alt="...">
+                <img src="${front_default}" class="card-img-top" alt="${name}">
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                 </div>
@@ -56,4 +74,3 @@ const generatePokemonCard = (arrPokemon) => {
     return pokemonCard;
 }
 
-document.querySelector(".row").innerHTML = generatePokemonCard(pokemonArr);
