@@ -20,7 +20,7 @@
 const evento = () => console.log("Hola mundo!");
 
 function pasteFunction() {
-    //e.preventDefault();
+    //e.preventphoto();
     /*let paste = (e.clipboardData || window.clipboardData).getData('text');
     console.log(paste.toUpperCase());  */
     console.log("Paste!")
