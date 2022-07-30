@@ -1,12 +1,22 @@
 const result = document.querySelector(".posts-container"); 
 
-const printPosts = () =>{
+const getPosts  = () =>{  
+  let url ="https://kodemia-js-7fdf3-default-rtdb.firebaseio.com/posts.json";
+  
+  /*Using fetch*/
+  fetch(url)
+  .then(result => result.json())
+  .then((posts)=>{
+    printPosts(posts);
+  })
+  .catch((error)=>{
+      console.log(error)
+  });  
+}
 
-  let posts = get("https://kodemia-js-7fdf3-default-rtdb.firebaseio.com/posts.json"); 
-
-
+const printPosts = (posts) =>{
   let template = "";
-  for(let post in posts){
+  for(let post in posts){      
     template +=`
             <div class="col">
                 <div class="card">
@@ -20,12 +30,11 @@ const printPosts = () =>{
                     </div>
                 </div>
             </div>
-          `;  
+          `;              
   }
-  return template;
+  result.innerHTML = template;
 }
 
-result.innerHTML = printPosts();
-
-
-URLSearchParams
+document.addEventListener('DOMContentLoaded', ()=>{
+  getPosts();
+});

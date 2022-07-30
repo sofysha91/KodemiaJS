@@ -80,24 +80,35 @@ createBtn.addEventListener('click' , (e)=>{
             date: date
         }
 
-        let NewPost = insertPost(postToInsert, url)
+        /*let NewPost = insertPost(postToInsert, url)
         console.log(NewPost)
 
         if (NewPost)    {
-            alertHolder.innerHTML =  `
-            <div class="alert alert-success mt-4" role="alert">
-            Post editado con exito! 
-            </div>
-            `
-    
-            setTimeout(()=>{
-                alertHolder.innerHTML =''
-            }, 1500)
+            
             
         }
         
         setTimeout(()=>{
             window.location.href = `/post_detail.html?id=${postId}` 
-        }, 1800)
+        }, 1800)*/
+        fetch(url, {method: "PATCH",body: JSON.stringify(postToInsert),headers: {"Content-type": "application/json; charset=UTF-8"}})
+        .then((res)=>{
+                return res.json();
+        }).then((res)=>{
+                console.log(res);
+                alertHolder.innerHTML =  `
+                    <div class="alert alert-success mt-4" role="alert">
+                        Post editado con exito! 
+                    </div>
+                    `;
+    
+                    setTimeout(()=>{
+                        alertHolder.innerHTML =''
+                    }, 1500);
+        }).catch((error)=>{
+            result.innerHTML =  `<div class="alert alert-danger" role="alert">
+            Ocurrio un error. ${error}
+        </div>`;      
+        });
     }
-} )
+});
